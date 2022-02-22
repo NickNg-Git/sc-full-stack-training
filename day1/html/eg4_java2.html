@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title> Click event</title>
+</head>
+
+<body>
+    <!--Script is wrapped in body-->
+    <script type="text/javascript">
+        function buttonClick() {
+            // use let or var to declare variable
+            let enteredAge = document.getElementById("age").value 
+            if (enteredAge > 0 && enteredAge <= 100) {
+                alert("Valid age")
+            } else {
+                alert("Invalid age")
+            }
+
+        }
+    </script>
+
+    <label>Enter username <input type="number" name="age" id="age" /></label>
+    <br />
+    <button onclick="buttonClick()"> Click to see magic </button>
+
+</body>
+
+</html>
