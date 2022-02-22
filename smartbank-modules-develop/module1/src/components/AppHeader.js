@@ -12,7 +12,7 @@ function AppHeader() {
         /**
          * Write logic to route to login page on clicking logout button.
          */
-         history.push("/login")
+         history.push("/login") /* added this line */
     }
 
     return (
@@ -34,7 +34,7 @@ function AppHeader() {
                         </li>
                         <li className="nav-item navbar-link">
                             {/* Provide Rewards routing link */}
-                            <Link className="btn btn-success" to="/rewards">
+                            <Link className="btn btn-success" to="/rewards"> {/* added /rewards */}
                                 Rewards Catalogue
                             </Link>
 
@@ -46,7 +46,7 @@ function AppHeader() {
 
                     <div className="header-right">
                         {/* Provide cart routing link */}
-                        <Link type="button" className="btn btn-success" to="/cart">
+                        <Link type="button" className="btn btn-success" to="/cart"> {/* added /cart */}
                             <i className="fas fa-shopping-cart" />&nbsp; My Cart &nbsp;
                             <span className="badge badge-light">
                                 {cartCount}
