@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { API_URL } from '../../Constants';
+import {LoginContext} from "../../contexts/LoginContext"
 
 
 function LoginPage() {
     let history = useHistory();
+    const {
+        loggedInUser,
+        isLoggedIn,
+        setLoginUserDetails,
+        logoutUser } = useContext(LoginContext);
+
     const [userId, setUserId] = useState('')
     const [password, setPassword] = useState('')
 
@@ -14,6 +21,7 @@ function LoginPage() {
         /**
          * Set user id from input
          */
+         setUserId(e.target.value) /* added this line */
 
     }
 
@@ -21,6 +29,7 @@ function LoginPage() {
         /**
          * Set password from input
          */
+        setPassword(e.target.value); /* added this line */
     }
 
     const verifyLogin = async (e) => {
@@ -39,7 +48,10 @@ function LoginPage() {
                 console.log(response);
                 setUserId('');
                 setPassword('');
-                
+                // updating the login context
+                setLoginUserDetails(response.data.body)
+                // navigating to the homepage after login
+                history.push('/rewards')
                
 
             })
@@ -69,7 +81,7 @@ function LoginPage() {
                 <div className="row">
                     <div className="col-md-6">
                         {/* call the verify login function to get the response from API server  */}
-                        <form>
+                        <form onSubmit={verifyLogin}>
 
                             <div className="form-group">
                                 <label>

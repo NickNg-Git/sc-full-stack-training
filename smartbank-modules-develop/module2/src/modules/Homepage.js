@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {LoginContext} from "../contexts/LoginContext"
 
 function Homepage() {
 
@@ -11,6 +12,8 @@ function Homepage() {
         totalRewardsGained: 0
     }
 
+    const loginContext = useContext(LoginContext)
+    console.log(loginContext)
 
     return (
         <div className="homepage container">
@@ -30,11 +33,11 @@ function Homepage() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>ccNumber</td>
-                                <td>ccName</td>
-                                <td>userName</td>
-                                <td>availableRedeemPoints</td>
-                                <td>totalRewardsGained</td>
+                                <td>{loginContext.loggedInUser.ccNumber}</td>
+                                <td>{loginContext.loggedInUser.ccName}</td>
+                                <td>{loginContext.loggedInUser.userName}</td>
+                                <td>{loginContext.loggedInUser.availableRedeemPoints}</td>
+                                <td>{loginContext.loggedInUser.totalRewardsGained}</td>
                             </tr>
                         </tbody>
                     </table>

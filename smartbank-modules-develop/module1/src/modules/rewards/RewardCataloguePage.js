@@ -52,10 +52,9 @@ function RewardCataloguePage() {
                                 {catalogueList.map(c => (
 
                                     <div className="col-md-4" key={c.id}>
-
-                                        {/* 
-                                          Call the Catalogue item component and pass the props into it.
-                                        */}
+                                         
+                                        {<CatalogueItem catalogue={c} />} 
+                                        {/* added ^ */}
                                         
                                         <br></br>
                                     </div>
