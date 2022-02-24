@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.axess</groupId>
-	<artifactId>smart-bank-api-h2</artifactId>
+	<artifactId>smart-bank-api-docker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>smart-bank-api</name>
 	<description>APIs for smart bank credit card</description>
